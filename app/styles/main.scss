@@ -220,13 +220,22 @@ h1 {
 
 .footer {
   @include container;
+  width: 900px;
+  max-width: 900px;
   text-align: center;
+  .row {
+    padding: 10px 0px;
+    display: block;
+  }
   .logo {
-    display: inline-block;
-    float: left;
     vertical-align: middle;
-    img { max-width: 220px; max-height: 100px; }
-    margin: 20px;
+    margin: 10px 20px;
+    img { position: relative; display:inline-block; vertical-align: middle; max-width: 220px; max-height: 100px; }
+    &.big {
+      img { max-height: 200px; max-width: 200px; }
+      display: block;
+      float: none;
+    }
   }
 }
 
