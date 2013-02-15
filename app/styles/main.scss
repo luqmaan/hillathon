@@ -293,4 +293,17 @@ h1 {
   color: rgba(255,255,255,1);
 }
 
+//placeholders
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #14252F;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #14252F;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #14252F;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #14252F;
+}
 

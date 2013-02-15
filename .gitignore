@@ -4,3 +4,4 @@ Thumbs.db
 nohup.out
 dist
 .sass-cache
+*.py
