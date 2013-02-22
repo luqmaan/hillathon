@@ -410,8 +410,8 @@ h1 {
   text-align: center;
 }
 .hero-unit.small {
-  height: 150px;
-  padding: 20px;
+  height: auto;
+  padding: 0 0 20px;
 }
 @media screen and (max-device-width: 320px) and (orientation: portrait) {
   .hero-unit {
@@ -488,6 +488,10 @@ h1 {
 }
 .hero-unit h1.title {
   font-size: 40px;
+  line-height: 60px;
+  margin: 30px;
+  position: relative;
+  display: block;
   color: rgba(255, 255, 255, 0.7);
   font-family: "Raleway", "Open Sans", Segoe, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-style: normal;
@@ -579,52 +583,50 @@ h1 {
 }
 
 .nav_wrapper {
-  background: #416565;
   margin: 0;
-  border-top: 1px solid #4e7979;
-  border-bottom: 1px solid #345050;
+  padding: 0;
 }
 .nav_wrapper .nav {
-  *zoom: 1;
-  max-width: 940px;
-  _width: 940px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.nav_wrapper .nav:after {
-  content: "";
-  display: table;
-  clear: both;
+  background: rgba(4, 24, 39, 0.8);
+  border-top: 1px solid rgba(4, 28, 46, 0.8);
+  border-bottom: 1px solid rgba(7, 43, 70, 0.8);
 }
 .nav_wrapper .nav ul {
   margin: 0;
-  padding: 0px;
+  padding: 0;
   text-align: center;
 }
 .nav_wrapper .nav ul li {
   display: inline-block;
+  vertical-align: middle;
   list-style: none;
 }
 .nav_wrapper .nav ul li a {
   text-transform: uppercase;
   text-decoration: none;
   font-size: 18px;
-  text-shadow: 0px 1px 0px #0d1414;
-  color: rgba(255, 255, 255, 0.8);
+  line-height: 18px;
+  text-shadow: 0px 1px 0px rgba(0, 4, 7, 0.8);
+  color: rgba(248, 248, 248, 0.7);
   font-family: "Raleway", "Open Sans", Segoe, Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-weight: 200;
+  font-weight: 500;
   letter-spacing: 2px;
   display: inline-block;
-  padding: 10px 20px;
-  border-left: 1px solid #416565;
-  border-right: 1px solid #416565;
+  padding: 46px 20px;
+  border-left: 1px solid rgba(4, 24, 39, 0.8);
+  border-right: 1px solid rgba(4, 24, 39, 0.8);
 }
 .nav_wrapper .nav ul li a:hover {
-  background: #476f6f;
-  border-left: 1px solid #4e7979;
-  border-right: 1px solid #4e7979;
+  color: white;
+  background: #001c27;
+  border-left: 1px solid rgba(4, 28, 46, 0.8);
+  border-right: 1px solid rgba(4, 28, 46, 0.8);
+}
+.nav_wrapper .nav ul li a.logo {
+  padding: 10px 0px;
+}
+.nav_wrapper .nav ul li a.logo h1:hover {
+  color: white;
 }
 
 .wrapper {

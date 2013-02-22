@@ -60,18 +60,18 @@ h1 {
   position: relative;
   margin-top: 10px;
 }
+$header-font-color: rgba(248,248,248,0.7);
 .hero-unit {
   $hero-height: 300px;
   $font-size: 45px;
-  $header-font-color: rgba(248,248,248,0.7);
   $iphone-font-size: 29px;
   $iphone-hero-height: 200px;
   padding: 0; 
   padding: $hero-height/4 0;
   height: $hero-height;
   &.small {
-    height: $hero-height / 2;
-    padding: 20px;
+    height: auto;
+    padding: 0 0 20px;
   }
   background: rgba(1,19,39,1) url('../images/codebg2.jpg') no-repeat center ; 
   font-color: $header-font-color;
@@ -139,6 +139,10 @@ h1 {
   }
   h1.title {
     font-size: 40px; 
+    line-height: 60px;
+    margin: 30px;
+    position: relative;
+    display: block;
     color: $header-font-color * 1.2;
     font-family: $sans-styled;
     font-style: normal;
@@ -225,38 +229,50 @@ h1 {
   }
 }
 .nav_wrapper {
-  $navbg: rgba(65,101,101,1);
-  background: $navbg;
+  $navbg: rgba(4,24,39,0.8);
+  $nav-height: 110px;
   margin: 0;
-  border-top: 1px solid $navbg * 1.2;
-  border-bottom: 1px solid $navbg * 0.8;
+  padding: 0;
   .nav {
-    @include container;
+    background: $navbg;
+    border-top: 1px solid $navbg * 1.2;
+    border-bottom: 1px solid $navbg * 1.8;
+    // @include container;
     ul {
       margin: 0;
-      padding: 0px;
+      padding: 0;
       text-align: center;
       li {
         // @include linear-gradient($wrapperbg, $wrapperbg * 2);
         display: inline-block;
+        vertical-align: middle;
         list-style: none;
         a {
           text-transform: uppercase;
           text-decoration: none;
-          font-size: 18px;
+          $font-size: 18px;
+          font-size: $font-size;
+          line-height: $font-size;
           text-shadow: 0px 1px 0px $navbg * 0.2;
-          color: rgba(255,255,255,0.8);
+          color: $header-font-color;
           font-family: $sans-styled;
-          font-weight: 200;
+          font-weight: 500;
           letter-spacing: 2px;
           display: inline-block;
-          padding: 10px 20px;
+          padding: ($nav-height - $font-size)/2 20px;
           border-left: 1px solid $navbg;
           border-right: 1px solid $navbg;
           &:hover {
-            background: $navbg * 1.1;
+            color: rgba(255,255,255,1);
+            background: rgba(0,28,39,1);
             border-left: 1px solid $navbg * 1.2;
             border-right: 1px solid $navbg * 1.2;
+          }
+          &.logo {
+            padding: 10px 0px;
+            h1:hover {
+              color: rgba(255,255,255,1);
+            }
           }
         }
       }
