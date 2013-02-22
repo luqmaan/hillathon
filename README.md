@@ -16,7 +16,7 @@
   * sassy-noise
 
 ## Installation ##
-   '''
+   ```
 
    git clone git@github.com:createch/hillathon.git
    cd hillathon
@@ -36,7 +36,7 @@
    require "bourbon"
    line_comments = false
    foreman start -f Procfile.dev
-   ''' 
+   ``` 
 
 ## Authors ##
   
