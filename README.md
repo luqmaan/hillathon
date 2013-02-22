@@ -17,7 +17,7 @@
 
 ## Installation ##
    '''
-   
+
    git clone git@github.com:createch/hillathon.git
    cd hillathon
    compass create .
@@ -31,7 +31,6 @@
           sass_dir = "assets/scss"
           images_dir = "assets/images"
           javascripts_dir = "assets/javascripts"
-
           require "sassy_noise"
           require "susy"
           require "bourbon"
