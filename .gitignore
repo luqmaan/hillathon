@@ -5,3 +5,4 @@ nohup.out
 dist
 .sass-cache
 *.py
+*.bak
