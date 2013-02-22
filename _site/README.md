@@ -21,10 +21,10 @@
    cd hillathon
    compass create .
    vi Procfile.dev
-   #paste into Procfile.dev: jekyll:  jekyll --server
+   paste into Procfile.dev: jekyll:  jekyll --server
                              comapss: compass watch
    vi config.rb
-   # paste into config.rb: 
+   paste into config.rb: 
           http_path = "/"
           css_dir = "assets/css"
           sass_dir = "assets/scss"
