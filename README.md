@@ -40,5 +40,5 @@
 
 ## Authors ##
   
-  * User radicalcakes
-  * User createch
+  * User/ radicalcakes
+  * User/ createch
