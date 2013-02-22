@@ -411,7 +411,7 @@ h1 {
 }
 .hero-unit.small {
   height: auto;
-  padding: 0 0 20px;
+  padding: 0;
 }
 @media screen and (max-device-width: 320px) and (orientation: portrait) {
   .hero-unit {
@@ -465,12 +465,6 @@ h1 {
   height: 1px;
   background-color: rgba(248, 248, 248, 0.5);
 }
-.hero-unit h1:nth-child(1) {
-  margin-left: 15px;
-}
-.hero-unit h1:nth-child(2) {
-  margin-left: 10px;
-}
 .hero-unit h1 .w0 {
   font-weight: 300;
 }
@@ -489,12 +483,13 @@ h1 {
 .hero-unit h1.title {
   font-size: 40px;
   line-height: 60px;
-  margin: 30px;
+  padding: 10px 0px 30px;
   position: relative;
   display: block;
   color: rgba(255, 255, 255, 0.7);
   font-family: "Raleway", "Open Sans", Segoe, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-style: normal;
+  letter-spacing: 3px;
 }
 .hero-unit h2 {
   color: rgba(198, 198, 198, 0.7);
@@ -584,12 +579,7 @@ h1 {
 
 .nav_wrapper {
   margin: 0;
-  padding: 0;
-}
-.nav_wrapper .nav {
-  background: rgba(4, 24, 39, 0.8);
-  border-top: 1px solid rgba(4, 28, 46, 0.8);
-  border-bottom: 1px solid rgba(7, 43, 70, 0.8);
+  padding: 10px 0 0;
 }
 .nav_wrapper .nav ul {
   margin: 0;
@@ -612,21 +602,24 @@ h1 {
   font-weight: 500;
   letter-spacing: 2px;
   display: inline-block;
-  padding: 46px 20px;
-  border-left: 1px solid rgba(4, 24, 39, 0.8);
-  border-right: 1px solid rgba(4, 24, 39, 0.8);
+  padding: 0;
+  margin: 20px;
 }
 .nav_wrapper .nav ul li a:hover {
   color: white;
-  background: #001c27;
-  border-left: 1px solid rgba(4, 28, 46, 0.8);
-  border-right: 1px solid rgba(4, 28, 46, 0.8);
 }
 .nav_wrapper .nav ul li a.logo {
-  padding: 10px 0px;
+  margin: 0;
 }
 .nav_wrapper .nav ul li a.logo h1:hover {
   color: white;
+}
+.nav_wrapper .nav ul li a.logo h1:hover .dash {
+  background-color: white;
+}
+.nav_wrapper .nav ul li a.current {
+  color: white;
+  border-bottom: 2px solid white;
 }
 
 .wrapper {
