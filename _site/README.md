@@ -45,5 +45,5 @@
 
 ## Authors ##
   
-  * @radicalcakes
-  * @createch
+  * <a href='https://github.com/radicalcakes'>radicalcakes</a>
+  * <a href='https://github.com/createch'>createch</a>
