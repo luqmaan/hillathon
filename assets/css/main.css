@@ -402,8 +402,8 @@ h1 {
 
 .hero-unit {
   padding: 0;
-  padding: 75px 0;
-  height: 300px;
+  padding: 70px 0;
+  height: 280px;
   background: #011327 url("../images/codebg2.jpg") no-repeat center;
   font-color: rgba(248, 248, 248, 0.7);
   margin: 0 auto;
@@ -512,6 +512,7 @@ h1 {
 }
 .hero-unit .signup h3 {
   color: rgba(198, 198, 198, 0.7);
+  text-align: center;
   font-weight: 200;
   font-size: 15px;
   margin: 0 0 10px;
@@ -555,7 +556,7 @@ h1 {
     margin-left: 10px;
   }
 }
-.hero-unit .signup button {
+.hero-unit .signup #register {
   float: left;
   position: relative;
   display: inline-block;
@@ -567,11 +568,33 @@ h1 {
   border-bottom: 1px solid rgba(37, 63, 82, 0.8);
   font-weight: 600;
 }
-.hero-unit .signup button:hover {
+.hero-unit .signup #register:hover {
   background: rgba(82, 139, 180, 0.8);
 }
 @media screen and (max-device-width: 480px) {
-  .hero-unit .signup button {
+  .hero-unit .signup #register {
+    width: 100px;
+    font-weight: 800;
+  }
+}
+.hero-unit .signup #sponsor_join {
+  position: relative;
+  margin-top: 25px;
+  margin-right: 15px;
+  display: inline-block;
+  color: #b4b4b4;
+  width: 200px;
+  height: 52px;
+  background: #722e0f;
+  border-top: 1px solid #943b13;
+  border-bottom: 1px solid #391707;
+  font-weight: 600;
+}
+.hero-unit .signup #sponsor_join:hover {
+  background: #7d3210;
+}
+@media screen and (max-device-width: 480px) {
+  .hero-unit .signup #sponsor_join {
     width: 100px;
     font-weight: 800;
   }
