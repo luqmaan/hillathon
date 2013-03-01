@@ -1,6 +1,9 @@
 ---
 layout: single
-title: Our Mission
+title: Mission
+fancytitle: Our Mission
+group: "navigation"
+order: 3
 teaser:
     Hillsborough County is embarking on a journey to drive the growth of technology and innovation start-ups and small businesses in Tampa Bay and we’re making great strides. <br />The Hillsborough Hackathon is just the beginning.
 ---

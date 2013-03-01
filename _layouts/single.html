@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=320,initial-scale=1, maximum-scale=1">
         <link rel="stylesheet" href="../assets/css/main.css">
-        <script src="../scripts/vendor/modernizr.min.js"></script>
+        <script src="../assets/js/modernizr.min.js"></script>
         <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
     </head>
@@ -20,22 +20,20 @@
                 <div class="nav_wrapper">
                     <div class="nav">
                         <ul>
-                            <li><a href="/mission" class="current">Mission</a></li>
-                            <li><a href="/sponsors">Sponsors</a></li>
-                            <li><a href="/" class="logo">
-                                    <h1 class="small">
-                                        <span class="w0"><span class='dash'></span> 2013</span><span class='dash'></span> <br />
-                                        <span class="w3">Hillsborough</span><br />
-                                        <span class="w3">Hackathon</span>
-                                    </h1>
-                                </a>
-                            </li>
-                            <li><a href="/judging">Judging</a></li>
-                            <li><a href="/contact">Contact</a></li>
+                          {% assign pages_list = site.pages %}
+                          {% assign group = 'navigation' %}
+                          {% include pages_list %}
                         </ul>
                     </div>
+                    <a href="/" class="logo">
+                        <h1 class="small">
+                            <span class="w0"><span class='dash'></span> 2013</span><span class='dash'></span> <br />
+                            <span class="w3">Hillsborough</span><br />
+                            <span class="w3">Hackathon</span>
+                        </h1>
+                    </a>
                 </div>
-                <h1 class="title">{{ page.title }}</h1>
+                <h1 class="title">{% if page.fancytitle %} {{ page.fancytitle }} {% else %} {{ page.title }} {% endif %}</h1>
                 <div class="teaser_wrapper"><p class="teaser">{{page.teaser}}</p></div>
             </div>
         </div>
@@ -55,19 +53,28 @@
                 <a href="http://usf.edu/" class="logo"><img alt="University of South Florida" src="../assets/images/usf-logo.png" /></a>
                 <a href="http://www.hccfl.edu/" class="logo"><img alt="Hillsborough Community College" src="../assets/images/hcc-seal-logo.jpg" /></a>
                 <a href="http://citizinvestor.com/" class="logo"><img alt="Citizenvestor" src="../assets/images/citizinvestor-logo.png" /></a>
+                 <a href="http://ut.edu/" class="logo"><img alt="University of Tampa" src="../assets/images/ut.jpg" /></a>
             </div>
             <div class="bottom_text">A Thien-Bach Huynh &amp; Luqmaan Dawoodjee Productions</div>
         </div>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
-        <script src="..///ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="../scripts/vendor/jquery.min.js"><\/script>')</script>
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=456587994353840";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
         </script>
     </body>
 </html>
