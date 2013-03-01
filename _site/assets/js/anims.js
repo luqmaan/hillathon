@@ -10,6 +10,26 @@ $headers.add($hero).css({
 
 isUp = false;
 
+// callback hell
+$(window).load(function() {
+    $(".w3").animate({
+        opacity: 1
+    }, 1000, function() {
+         $(".w0, .dash").animate({
+            opacity: 1
+        }, 1000, function() {
+            $(".hero h2").animate({
+                opacity: 1
+            }, 1000, function() {
+                $(".nav").animate({
+                    opacity: 1
+                }, 1000)
+            })
+        })
+    });
+});
+
+
 $w.on("scroll", function() {
     var t = $w.scrollTop();
     if (t < 0) {

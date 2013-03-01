@@ -56,11 +56,10 @@ html, body {
   }
 }
 ::selection {
-  background: rgba(3,61,65,0.3);
+  background: rgba(3,61,65,0.5);
 }
 h1 {
   position: relative;
-  margin-top: 10px;
 }
 $header-font-color: rgba(248,248,248,0.7);
 .hero .content {
@@ -77,7 +76,7 @@ $header-font-color: rgba(248,248,248,0.7);
   @include iphone-portrait {
     width: 320px;
     max-width: 100%;
-    overflow: hidden;
+    overflow: 0;
     background-size: auto $iphone-hero-height*1.5;
     height: $iphone-hero-height;
     padding-top: $iphone-hero-height/2.3;
@@ -93,7 +92,7 @@ $header-font-color: rgba(248,248,248,0.7);
     font-size: $font-size;
     $line-height: ($font-size * 1.2);
     line-height: $line-height;
-    padding: 20px 0 0;
+    padding: 10px 0 0;
     &.small {
       font-size: $font-size / 2;
       line-height: $line-height / 2;
@@ -124,11 +123,11 @@ $header-font-color: rgba(248,248,248,0.7);
         background-color: transparentize($header-font-color, 0.2);
       }
     }
-    .w0 {font-weight: 300;}
-    .w1 {font-weight: 400;}
-    .w2 {font-weight: 500;}
-    .w3 {font-weight: 800;}
-    .w4 {font-weight: 800;}
+    .w0 {font-weight: 300; opacity: 0;}
+    .w1 {font-weight: 400; opacity: 0;}
+    .w2 {font-weight: 500; opacity: 0;}
+    .w3 {font-weight: 800; opacity: 0;}
+    .w4 {font-weight: 800; opacity: 0;}
   }
   h1.title {
     font-size: 40px; 
@@ -142,6 +141,7 @@ $header-font-color: rgba(248,248,248,0.7);
     letter-spacing: 3px;
   }
   h2 {
+    opacity: 0;
     color: $header-font-color * 0.8;
     margin: 0;
     padding: 0 0 45px;
@@ -298,6 +298,7 @@ a.button, button {
   margin: 0;
   padding: 10px 0 0;
   .nav {
+    opacity: 0;
     ul {
       margin: 0;
       padding: 10px 0 0px;
@@ -451,6 +452,7 @@ a.button, button {
         font-size: 40px;
       }
       .dash {
+        opacity: 0;
         width: 200px;
       }
     }
