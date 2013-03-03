@@ -1,16 +1,11 @@
 ---
-layout: index
-title: Home
+layout: single
+title: Schedule
+group: "navigation"
+order: 2
 ---
-<div class="content">
-    <h2>Become A Sponsor</h2>
-    <p>For the first time ever, Hillsborough County is opening up data from numerous departments to Tampa Bay's technology community and is offering prizes for the best apps built on top of the data. Hillsborough County, in partnership with Hillsborough Community College, University of South Florida, and University of Tampa, is looking to the local tech community to participate in the County’s first Hack-A-Thon Challenge. On April 12-14 at the HCC Brandon Campus, the County is placing data subsets on a server outside of its network for techies to view and come up with ideas on how to use it to make our lives easier.</p>
-    <p>Prizes will be given for the best app built or idea implemented by the County on the data. </p>
-<p><a href="#">Registration</a> for teams and individuals will occur through Thursday, April 4. </p>
-    <p>If you or your company want to support the Hillsborough Hack-A-Thon Challenge, become a sponsor (hyperlink to tab) or donate through Citizinvestor (hyperlink) - a Hillsborough County based company - to crowdfund the prizes. So make your pledge today and encourage your friends on Facebook and Twitter to do the same!</p>    
-</div>
-<div class="schedule sidebar">
-    <h2>Schedule</h2>
+
+<div class="schedule">
     <div class="date">
         <span class="date_item"><b>Fri</b> April 12</span>
         <div class="item">
@@ -93,4 +88,3 @@ title: Home
         </div>
     </div>
  </div>
-        
