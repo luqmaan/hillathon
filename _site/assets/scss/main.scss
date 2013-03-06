@@ -324,7 +324,7 @@ a.button, button {
           &:hover {
             color: rgba(255,255,255,1);
           }
-          &.current {
+          &.active {
             color: rgba(255,255,255,1);
             border-bottom: 2px solid rgba(255,255,255,1);
           }

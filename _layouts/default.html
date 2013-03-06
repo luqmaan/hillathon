@@ -13,7 +13,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  
         <script src="assets/js/jquery.colorbox-min.js"></script>
         <script src="assets/js/modernizr.min.js"></script>
-        <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':4000/livereload.js?snipver=1"></' + 'script>')</script>
         <script>
             $(document).ready(function(){
                 $(".sponsor-iframe").colorbox({iframe:true, width:"100%", height:"90%", fixed:true}).colorbox.close();
@@ -39,7 +38,7 @@
                             {% endif %} 
                         {% endfor %}
                     {% endfor %}
-                         <!-- tsk tsk luqmaan :P {% assign pages_list = site.pages %}
+                        <!--  {% assign pages_list = site.pages %}
                           {% assign group = 'navigation' %}
                           {% include pages_list %} -->
                     </ul>
