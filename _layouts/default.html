@@ -27,10 +27,21 @@
                 <div class="nav_wrapper">
                     <div class="nav">
                         <ul>
-                          {% assign pages_list = site.pages %}
+                        {% for order in (1..6) %}
+                          {% for p in site.pages %}
+                            {% if p.order == order %}
+                              <li>
+                                <a {% if p.url == page.url %}class="active"{%endif %} href="{{p.url}}">
+                                   {{p.title}}
+                                </a>
+                              </li>
+                            {% endif %} 
+                        {% endfor %}
+                    {% endfor %}
+                         <!-- tsk tsk luqmaan :P {% assign pages_list = site.pages %}
                           {% assign group = 'navigation' %}
-                          {% include pages_list %}
-                        </ul>
+                          {% include pages_list %} -->
+                    </ul>
                     </div>
                 </div>
                 <h1><span class="w0"><span class='dash'></span> 2013</span><span class='dash'></span> <br />

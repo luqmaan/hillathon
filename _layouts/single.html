@@ -18,22 +18,33 @@
         <div class="hero wrapper">
             <div class="content small">
                 <div class="nav_wrapper">
-                    <div class="nav">
-                        <ul>
-                          {% assign pages_list = site.pages %}
+                    <div class="nav" style="opacity:1; margin-top:20px;">
+                      <ul>
+                        {% for order in (1..6) %}
+                          {% for p in site.pages %}
+                            {% if p.order == order %}
+                              <li>
+                                <a {% if p.url == page.url %}class="active"{%endif %} href="{{p.url}}">
+                                   {{p.title}}
+                                </a>
+                              </li>
+                            {% endif %} 
+                         {% endfor %}
+                      {% endfor %}
+                         <!-- tsk tsk luqmaan :P {% assign pages_list = site.pages %}
                           {% assign group = 'navigation' %}
-                          {% include pages_list %}
-                        </ul>
+                          {% include pages_list %} -->
+                     </ul>
                     </div>
-                    <a href="/" class="logo">
+                  <!--   <a href="/" class="logo">
                         <h1 class="small">
                             <span class="w0"><span class='dash'></span> 2013</span><span class='dash'></span> <br />
                             <span class="w3">Hillsborough</span><br />
                             <span class="w3">Hackathon</span>
                         </h1>
-                    </a>
+                    </a> -->
                 </div>
-                <h1 class="title">{% if page.fancytitle %} {{ page.fancytitle }} {% else %} {{ page.title }} {% endif %}</h1>
+                <h1 class="title" style="margin-top:50px;">{% if page.fancytitle %} {{ page.fancytitle }} {% else %} {{ page.title }} {% endif %}</h1>
                 <div class="teaser_wrapper"><p class="teaser">{{page.teaser}}</p></div>
             </div>
         </div>
