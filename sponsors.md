@@ -2,7 +2,7 @@
 layout: single
 title: Sponsors
 group: "navigation"
-order: 1
+order: 2
 teaser:
     We need your support to make Hillsborough County the fastest growing tech community where new businesses want to come and our new graduates want to stay. By contributing to the Hillsborough County Hackathon, you are letting our local tech community know we want them here. 
 ---

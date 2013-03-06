@@ -2,6 +2,7 @@
 layout: single
 title: Contact
 group: "navigation"
+order: 6
 teaser:
     Have a question about the Hackathon? Ask away!
 ---

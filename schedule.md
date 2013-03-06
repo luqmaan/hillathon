@@ -2,7 +2,7 @@
 layout: single
 title: Schedule
 group: "navigation"
-order: 2
+order: 3
 ---
 
 <div class="schedule">
