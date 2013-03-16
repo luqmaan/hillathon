@@ -7,7 +7,7 @@ teaser:
     Hillsborough County is embarking on a journey to drive the growth of technology and innovation start-ups and small businesses in Tampa Bay and we’re making great strides. <br />The Hillsborough Hackathon is just the beginning.
 ---
 
-# Meet Our Judges
+# Meet The Judges
 <div class="wrapper">
     <div class="judge">
     <img src="http://placekitten.com/195/195" />

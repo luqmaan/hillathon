@@ -3,6 +3,8 @@ layout: single
 title: Schedule
 group: "navigation"
 order: 3
+teaser: 
+    This 48-hour long event will be held April 12-14, at the Hillsborough Community College - Brandon Campus, 10414 E. Columbus Drive in Tampa.
 ---
 
 <div class="schedule">
