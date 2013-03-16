@@ -1,12 +1,2 @@
-{% assign i = 0 %}
-{% for node in pages_list %}
-  {% if group == null or group == node.group %}
-    {% if page.url == node.url %}
-        <li><a href="{{node.url}}" class="current">{{node.title}}</a></li>
-    {% else %}
-      <li><a href="{{node.url}}">{{node.title}}</a></li>
-    {% endif %}
-  {% endif %}
-{% endfor %}
-{% assign pages_list = nil %}
-{% assign group = nil %}
+{% for order in (1..6) %}{% for p in site.pages %}{% if p.order == order %}<li><a {% if p.url == page.url %}class="active"{%endif %} href="{{p.url}}">{{p.title}}</a></li>{% endif %}{% endfor %}{% endfor %}
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>

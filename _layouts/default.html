@@ -21,33 +21,20 @@
 
         </script>
     </head>
-    <body class="fixed_scroll">
+    <body class="home">
         <div class="hero wrapper">
             <div class="content">
-                <div class="nav_wrapper">
-                    <div class="nav">
+                <div class="nav_wrapper hide">
+                    <div class="nav index">
                         <ul>
-                        {% for order in (1..6) %}
-                          {% for p in site.pages %}
-                            {% if p.order == order %}
-                              <li>
-                                <a {% if p.url == page.url %}class="active"{%endif %} href="{{p.url}}">
-                                   {{p.title}}
-                                </a>
-                              </li>
-                            {% endif %} 
-                        {% endfor %}
-                    {% endfor %}
-                        <!--  {% assign pages_list = site.pages %}
-                          {% assign group = 'navigation' %}
-                          {% include pages_list %} -->
-                    </ul>
+                            {% include pages_list %}
+                        </ul>
                     </div>
                 </div>
-                <h1><span class="w0"><span class='dash'></span> 2013</span><span class='dash'></span> <br />
-                    <span class="w3">Hillsborough</span><br />
-                    <span class="w3">Hackathon</span></h1>
-                <h2>April 12, 13, &amp; 14</h2>
+                <h1><span class="w0 hide"><span class='dash'></span> 2013<span class='dash'></span></span><br />
+                    <span class="w3 hide">Hillsborough</span><br />
+                    <span class="w3 hide">Hackathon</span></h1>
+                <h2 class="hide">April 12, 13, &amp; 14</h2>
                 <div class="signup" style="display:none;">
                     <h3>Tickets coming soon. Sign up to know when they are available.</h3>
                     <form action="http://eyesonmars.us6.list-manage.com/subscribe/post" method="POST">
@@ -58,15 +45,15 @@
                 </div>
             </div>
         </div>
-        <div class="main wrapper index">
+        <div class="main wrapper index hide">
             <div class="actions">
                 <div class="wrapper">
                     
                     <a class="eventbrite cboxElement" href="http://www.eventbrite.com/tickets-external?eid=5727272426&ref=etckt&v=2">
-                        <button class="register">SIGN UP</button>
+                        <button class="register hide">REGISTER</button>
                     </a>
                     <a href="http://www.citizinvestor.com/invest/prizes-for-hillsborough-app-a-thon" class="sponsor-iframe cboxElement">
-                        <button class="sponsor">SPONSOR</button>
+                        <button class="sponsor hide">SPONSOR</button>
                     </a>
                 </div>
             </div>
@@ -74,20 +61,19 @@
                  {{ content }}  
             </div>
         </div>
-        <div class="footer index">
-            <div class="row">
-                <a href="http://www.hillsboroughcounty.org/" class="logo big"><img alt="Hillsborough County" src="assets/images/hillsborough-logo-text.jpg" /></a>
+        <div class="footer hide">
+            <div class="wrapper">        
+                <h2>Brought To You By</h2>
+                <div ><a class="logo double" href="http://www.hillsboroughcounty.org/" rel="Hillsborough County" style="background-image: url('assets/images/hillsborough-logo-text.jpg');" /></a></div>
+                <div ><a class="logo wide" href="http://www.facebook.com/createchusf" rel="Createch at USF" style="background-image: url('assets/images/createch-logo-black.png');" /></a></div>
+                <div ><a class="logo" href="http://usf.edu/" rel="University of South Florida" style="background-image: url('assets/images/usf-logo.jpeg');" /></a></div>
+                <div ><a class="logo" href="http://www.hccfl.edu/" rel="Hillsborough Community College" style="background-image: url('assets/images/hcc-seal-logo.jpg');" /></a></div>
+                <div ><a class="logo wide" href="http://citizinvestor.com/" rel="Citizenvestor" style="background-image: url('assets/images/citizinvestor-logo.png');" /></a></div>
+                <div ><a class="logo wide" href="http://ut.edu/" rel="University of Tampa" style="background-image: url('assets/images/ut.jpg');" /></a></div>
+                <div ><a class="logo wide" href="http://www.civicplus.com/" rel="CivicPlus" style="background-image: url('assets/images/civicplus.jpg');" /></a></div>
             </div>
-            <div class="row">
-                <a href="http://www.facebook.com/createchusf" class="logo"><img alt="Createch at USF" src="assets/images/createch-logo-black.png" /></a>
-                <a href="http://usf.edu/" class="logo"><img alt="University of South Florida" src="assets/images/usf-logo.png" /></a>
-                <a href="http://www.hccfl.edu/" class="logo"><img alt="Hillsborough Community College" src="assets/images/hcc-seal-logo.jpg" /></a>
-                <a href="http://citizinvestor.com/" class="logo"><img alt="Citizenvestor" src="assets/images/citizinvestor-logo.png" /></a>
-                 <a href="http://ut.edu/" class="logo"><img alt="University of Tampa" src="assets/images/ut.jpg" /></a>
-            </div>
-            <div class="bottom_text">A Thien-Bach Huynh &amp; Luqmaan Dawoodjee Productions</div>
         </div>
-
+        <div class="bottom_text">A Thien-Bach Huynh &amp; Luqmaan Dawoodjee Productions</div>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->

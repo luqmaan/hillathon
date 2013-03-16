@@ -8,14 +8,16 @@
 @import "susy";
 @import "media-queries";
 @import "bourbon";
+@import "colorbox";
 // colors
 $body-color: rgba(255,255,255,1);
 $container-color: rgba(255,255,255,1);
-$text-color: rgba(122,114,102,1);
-$a-color: $text-color * 1.2;
 $header-color: rgba(122,114,102,1) * 2;
-$font-color: rgba(89,89,89,1);
+$font-color: rgba(208,215,223,1);
 $wrapperbg: rgba(184,238,234,1);
+$header-font-color: rgba(216,205,222,1);
+$title-font-color: rgba(14,103,183,1);
+$page-background-color: rgba(1,19,39,1);
 
 // fonts
 $header-font: 'Roboto Condensed', sans-serif;
@@ -32,7 +34,7 @@ $default-transition-duration: 500ms;
 $default-transition-function: false;
 $default-transition-delay:    false;
 
-* { @include transition(color 0.3s ease-out, background-color 0.3s ease-out)}
+* { @include transition(color 0.3s ease-out, background-color 0.3s ease-out, opacity 0.3s ease-out)}
 
 // https://github.com/antsa/sassy_noise
 $sassy-noise-intensity-default: 0.5;
@@ -45,12 +47,17 @@ $column-width   : 60px;            // each column is 4em wide
 $gutter-width   : 20px;            // 1em gutters between columns
 $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 
+.hide {
+  opacity: 0;
+}
 
 html, body {
   margin: 0;
   width: 100%;
   height: 100%;
   font-family: $sans;
+  background: $page-background-color url('../images/codebg2.jpg') no-repeat top center ; 
+
   @include placeholder {
     color: #14252F;
   }
@@ -58,10 +65,37 @@ html, body {
 ::selection {
   background: rgba(3,61,65,0.5);
 }
-h1 {
-  position: relative;
+.main.wrapper, .footer {
+  padding: 20px 0 30px;
+  color: $font-color;
+  @include sassy-noise();
+
+  h1, h2, h3, h4 {
+    color: $title-font-color;
+    font-family: $sans-styled;
+    letter-spacing: 2px;
+    text-shadow: 0px 1px 0px rgba(7,31,39,1);
+  }
+  h2 {
+    font-size: 35px;
+  }
+  h3 {
+    font-size: 25px;
+  }
+  h2, h3 {
+    margin:0px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+  h1 {
+    position: relative;
+  }
 }
-$header-font-color: rgba(248,248,248,0.7);
 .hero .content {
   $hero-height: 280px;
   $font-size: 45px;
@@ -69,7 +103,6 @@ $header-font-color: rgba(248,248,248,0.7);
   $iphone-hero-height: 200px;
   padding: 0; 
   height: auto;
-  background: rgba(1,19,39,1) url('../images/codebg2.jpg') no-repeat center ; 
   font-color: $header-font-color;
   margin: 0 auto;
   text-align: center;
@@ -96,9 +129,8 @@ $header-font-color: rgba(248,248,248,0.7);
     &.small {
       font-size: $font-size / 2;
       line-height: $line-height / 2;
-      margin-bottom: 10px;
       letter-spacing: 3px;
-      padding: 0px;
+      padding: 0 0 10px;
     }
     @include iphone-portrait {
       font-size: $iphone-font-size;
@@ -123,11 +155,11 @@ $header-font-color: rgba(248,248,248,0.7);
         background-color: transparentize($header-font-color, 0.2);
       }
     }
-    .w0 {font-weight: 300; opacity: 0;}
-    .w1 {font-weight: 400; opacity: 0;}
-    .w2 {font-weight: 500; opacity: 0;}
-    .w3 {font-weight: 800; opacity: 0;}
-    .w4 {font-weight: 800; opacity: 0;}
+    .w0 {font-weight: 300;}
+    .w1 {font-weight: 400;}
+    .w2 {font-weight: 500;}
+    .w3 {font-weight: 800;}
+    .w4 {font-weight: 800;}
   }
   h1.title {
     font-size: 40px; 
@@ -141,7 +173,6 @@ $header-font-color: rgba(248,248,248,0.7);
     letter-spacing: 3px;
   }
   h2 {
-    opacity: 0;
     color: $header-font-color * 0.8;
     margin: 0;
     padding: 0 0 45px;
@@ -293,15 +324,16 @@ a.button, button {
 }
 
 .nav_wrapper {
-  $navbg: rgba(4,24,39,0.8);
+  $navbg: rgba(2,43,66,1);
   $nav-height: 110px;
   margin: 0;
-  padding: 10px 0 0;
   .nav {
-    opacity: 0;
+    background: transparentize($navbg, 0.4);
+    &.home {
+      background: transparentize($navbg, 0.1);
+    }
     ul {
       margin: 0;
-      padding: 10px 0 0px;
       text-align: center;
       li {
         display: inline-block;
@@ -319,20 +351,26 @@ a.button, button {
           font-weight: 500;
           letter-spacing: 2px;
           display: inline-block;
-          padding: 0;
-          margin: 0 10px;
-          &:hover {
-            color: rgba(255,255,255,1);
-          }
+          padding: 20px 15px;
+          border: none;
+          margin: 0;
+          border-bottom: 2px solid rgba(2,43,66,0);
           &.active {
             color: rgba(255,255,255,1);
-            border-bottom: 2px solid rgba(255,255,255,1);
+            background: mix($navbg, #fff, 91);
+            border-bottom: 2px solid lighten($navbg, 15);
+          }
+          &:hover {
+            color: rgba(255,255,255,1);
+            background: lighten($navbg, 10);
+            border-bottom: 2px solid lighten($navbg, 20);
           }
         }
       }
     }
   }
   a.logo {
+    background: transparentize($navbg, 0.3);
     padding-top: 10px;
     display: block;
     text-decoration: none;
@@ -342,36 +380,6 @@ a.button, button {
     h1:hover .dash {
       background-color: rgba(255,255,255,1);
     }
-  }
-}
-.main.wrapper {
-  background: $wrapperbg;
-  border-top: 1px solid $wrapperbg * 1.4;
-  border-bottom: 1px solid $wrapperbg * 0.8;
-  padding: 20px 0 30px;
-  color: rgba(23,28,36,1);
-  @include sassy-noise();
-  h1, h2, h3, h4 {
-    color: rgba(88,36,12,1) * 1.3;
-    font-family: $sans-styled;
-    letter-spacing: 2px;
-    text-shadow: 0px 1px 0px rgba(255,255,255,0.7);
-  }
-  h2 {
-    font-size: 30px;
-  }
-  h3 {
-    font-size: 25px;
-  }
-  h2, h3 {
-    margin:0px;
-  }
-  p {
-    font-size: 16px;
-    line-height: 24px;
-  }
-  li {
-    margin-bottom: 10px;
   }
 }
 .index {
@@ -394,6 +402,7 @@ a.button, button {
     }
   }
 }
+
 .single {
   .container {
     @include container;
@@ -430,37 +439,44 @@ a.button, button {
   }
 }
 
-.fixed_scroll {
+body.fixed_scroll {
   $fixed-header-height: 455px;
+  height: $fixed-header-height;
+  position: fixed;
+  display: block;
+  width: 100%;
+  z-index: 10;  
   .hero.wrapper {
-    height: $fixed-header-height;
-    position: fixed;
-    display: block;
-    width: 100%;
-    z-index: 10;
     .content {
       height: $fixed-header-height;
       background-position: top;
-      .nav {
-        padding: 20px 0 30px;
-      }
-      h1 {
-        font-size: 70px;
-        line-height: 70px;
-      }
-      h2 {
-        font-size: 40px;
-      }
-      .dash {
-        opacity: 0;
-        width: 200px;
-      }
     }
   }
   .main.wrapper {
     z-index: 30;
     position: relative;
     top: $fixed-header-height;;
+  }
+  .footer {
+    z-index: 100;
+    top: 455px;
+    position: relative;
+  }
+}
+
+body.home {
+  .hero.wrapper {
+    h1 {
+      font-size: 70px;
+      line-height: 70px;
+    }
+    h2 {
+      font-size: 40px;
+    }
+    .dash {
+     
+      width: 200px;
+    }
   }
 }
 
@@ -504,79 +520,55 @@ a.button, button {
 }
 
 .footer {
-  // @include container;
-  z-index: 100;
-  &.index {
-    top: 455px;
-    position: relative;
+  @include container;
+  .wrapper {
+    @include span-columns(8,8);
+    padding-left: 70px;
   }
   text-align: center;
-  background: #fff;
+  // background: #fff;
   .row {
     padding: 10px 0;
     display: block;
   }
-  .logo {
-    vertical-align: middle;
-    margin: 10px 20px;
-    img { position: relative; display:inline-block; vertical-align: middle; max-width: 220px; max-height: 100px; }
-    &.big {
-      img { max-height: 200px; max-width: 200px; }
-      display: block;
-      float: none;
-    }
+.logo {
+  margin: 7px;
+  height: 130px;
+  width: 220px;
+  background: #fff;
+  border-radius: 3px;
+  display: block;
+  float: left;
+  opacity: 0.7;
+  padding: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-color: #fff;
+  &.double {
+    width: 455px;
+    background-size: 35%;
   }
+  &.wide {
+    background-size: 90%;
+  }
+  &:hover {
+    opacity: 1;
+  }
+  a {
+    img { 
+      color: blue;
+      height: auto;
+      width: auto;
+      max-height: 120px;
+    }
+   
+  }
+}
 
 }
 .bottom_text {
   font-size: 10px;
-  color: rgba(255,255,255,1);
+  color: $page-background-color;
   opacity: 0;
 }
-
-
-
-/*
-    ColorBox Core Style:
-    The following CSS is consistent between example themes and should not be altered.
-*/
-#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
-#cboxOverlay{position:fixed; width:100%; height:100%;}
-#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
-#cboxContent{position:relative;}
-#cboxLoadedContent{overflow:auto; -webkit-overflow-scrolling: touch;}
-#cboxTitle{margin:0;}
-#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
-#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
-.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none;}
-.cboxIframe{width:100%; height:100%; display:block; border:0;}
-#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;}
-
-/* 
-    User Style:
-    Change the following styles to modify the appearance of ColorBox.  They are
-    ordered & tabbed in a way that represents the nesting of the generated HTML.
-*/
-#cboxOverlay{background:#000;}
-#colorbox{outline:0;}
-#cboxContent{margin-top:20px;background:#000;}
-.cboxIframe{background:#fff;}
-#cboxError{padding:50px; border:1px solid #ccc;}
-#cboxLoadedContent{border:5px solid #000; background:#fff;}
-#cboxTitle{position:absolute; top:-20px; left:0; color:#ccc;}
-#cboxCurrent{position:absolute; top:-20px; right:0px; color:#ccc;}
-#cboxLoadingGraphic{background:image-url('loading.gif') no-repeat center center;}
-
-/* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
-#cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {border:0; padding:0; margin:0; overflow:visible; width:auto; background:none; }
-
-/* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
-#cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}
-
-#cboxSlideshow{position:absolute; top:-20px; right:90px; color:#fff;}
-#cboxPrevious{position:absolute; top:50%; left:5px; margin-top:-32px; background:image-url('controls.png') no-repeat top left; width:28px; height:65px; text-indent:-9999px;}
-#cboxPrevious:hover{background-position:bottom left;}
-#cboxNext{position:absolute; top:50%; right:5px; margin-top:-32px; background:image-url('controls.png') no-repeat top right; width:28px; height:65px; text-indent:-9999px;}
-#cboxNext:hover{background-position:bottom right;}
-#cboxClose{position:absolute; top:5px; right:5px; display:block; background:image-url('controls.png') no-repeat top center; width:38px; height:19px; text-indent:-9999px;}
-#cboxClose:hover{background-position:bottom center;}
