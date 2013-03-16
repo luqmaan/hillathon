@@ -1,2 +1,1 @@
 <li><a href="http://hackhillsborough.eventbrite.com/" target="_blank">Register</a></li>{% for order in (2..6) %}{% for p in site.pages %}{% if p.order == order %}<li><a {% if p.url == page.url %}class="active"{%endif %} href="{{p.url}}">{{p.title}}</a></li>{% endif %}{% endfor %}{% endfor %}
-<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
