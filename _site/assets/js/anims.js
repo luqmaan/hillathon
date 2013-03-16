@@ -3,17 +3,22 @@ var $w = $(window);
 
 isUp = false;
 
-var anims = ['.nav_wrapper', '.w0','.w3', '.hero h2', '.register', '.sponsor', '.main', '.footer'];
+var anims = ['.nav_wrapper', '.w0','.w3', '.hero h2', '.register', '.sponsor', '.main .container', '.footer'];
 
 $w.load(function() {
+
     console.log(anims.length);
+    for (var i in anims) {
+        anims[i] = $(anims[i]);
+        console.log(i);
+        console.log( anims[i] )        
+    }
     function animate(i) {
         if (i > anims.length) {
             return;
         }
         else {
-            console.log($(anims[i]))
-            $(anims[i]).animate({
+            anims[i].animate({
                 opacity: 1
             }, 500, function(){
                 animate(i+1)
