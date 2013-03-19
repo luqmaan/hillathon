@@ -1,7 +1,7 @@
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,400");
 @import url("http://fonts.googleapis.com/css?family=Raleway:400,900,700,800,600,500,300,200,100");
 @import url("http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic");
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,300,600,700,800");
 @import "normalize";
 @import "compass/css3/transition";
 @import "sassy-noise";
@@ -42,7 +42,7 @@ $sassy-noise-opacity-default:   0.07;
 $sassy-noise-size-default:      70;
 $sassy-noise-mono-default:      false;
 
-$total-columns  : 10;             // a 12-column grid
+$total-columns  : 8;             // a 12-column grid
 $column-width   : 60px;            // each column is 4em wide
 $gutter-width   : 20px;            // 1em gutters between columns
 $grid-padding   : $gutter-width;  // grid-padding equal to gutters
@@ -182,10 +182,10 @@ html, body {
   h2 {
     color: $header-font-color * 0.8;
     margin: 0;
-    padding: 0 0 45px;
+    padding: 0;
     font-family: $serif;
-    font-weight: normal;
     font-style: italic;
+    font-weight: normal;
     font-size: 19px;
     @include iphone-portrait {
       font-size: 15px;
@@ -251,7 +251,6 @@ html, body {
     margin: 0 auto;
     @include span-columns(7, 7);
     font-family: $serif;
-    font-style: italic;
     font-size: 20px;
     line-height: 35px;
     color: $header-font-color;
@@ -289,18 +288,6 @@ html, body {
   &:active {
     box-shadow: inset 0px 0px 10px rgba(0,0,0,0.4);
   }
-  &.register {
-    $btncolor: rgba(14,103,183,1);
-    background: $btncolor;
-    @include sassy-noise($intensity: 0.2, $opacity: 0.1);
-    border: 1px solid $btncolor * 0.8;
-    border-top: 1px solid $btncolor * 1.3;
-    border-bottom: 1px solid $btncolor * 0.5;
-    &:hover {
-      background: $btncolor*1.3;
-      @include sassy-noise($intensity: 0.3, $opacity: 0.2);
-    }
-  }
   &.sponsor {
     $btncolor: rgba(135,8,2,1);
     background: $btncolor;
@@ -313,24 +300,34 @@ html, body {
       @include sassy-noise($intensity: 0.3, $opacity: 0.2);
     }
   }
+  &.register {
+    $btncolor: rgba(14,103,183,1);
+    background: $btncolor;
+    @include sassy-noise($intensity: 0.2, $opacity: 0.1);
+    border: 1px solid $btncolor * 0.8;
+    border-top: 1px solid $btncolor * 1.3;
+    border-bottom: 1px solid $btncolor * 0.5;
+    &:hover {
+      background: $btncolor*1.3;
+      @include sassy-noise($intensity: 0.3, $opacity: 0.2);
+    }
+  }
 }
+
 .actions {
-  position: absolute;
-  margin-top:-40px;
-  left: 50%;
   text-align: center;
   padding: 0px;
   display: block;
-  a {
-    text-decoration: none;
-  }
+  margin: 30px 0 -10px;
   .wrapper {
-    left: -50%;
     position: relative;
-  }
-  button {
-    padding-left: 40px;
-    padding-right: 40px;
+    a.button {
+      text-decoration: none;
+      margin: 0;
+      &.sponsor {
+        margin-left: 10px;
+      }
+    }
   }
 }
 
@@ -339,9 +336,13 @@ html, body {
   $nav-height: 110px;
   margin: 0;
   .nav {
+    background: $navbg * 0.7;
     background: transparentize($navbg, 0.4);
     &.home {
-      background: transparentize($navbg, 0.1);
+      background: $navbg * 0.8;
+      ul li a {
+          border-bottom: 2px solid $navbg * 0.8;
+      }
     }
     ul {
       margin: 0;
@@ -365,7 +366,7 @@ html, body {
           padding: 20px 15px;
           border: none;
           margin: 0;
-          border-bottom: 2px solid rgba(2,43,66,0);
+          border-bottom: 2px solid $navbg;
           &.active {
             color: rgba(255,255,255,1);
             background: mix($navbg, #fff, 91);
@@ -379,8 +380,10 @@ html, body {
         }
       }
     }
+    
   }
   a.logo {
+    background: $navbg * 0.5;
     background: transparentize($navbg, 0.3);
     padding-top: 10px;
     display: block;
@@ -395,20 +398,18 @@ html, body {
 }
 .index {
    .container {
-    @include container;
-    @include set-container-width(8);
     padding-top: 20px;
   }
   .content {
     @include span-columns(10, 10);
     margin: 0;
     color: $font-color;
-    font-family: $serif;
+    font-weight: 300;
+    font-family: $sans;
     $size: 20px;
     font-size: $size;
     line-height: $size * 1.6;
     p {
-      font-style: italic;    
       font-size: $size;
       line-height: $size * 1.6;
     }
@@ -532,10 +533,12 @@ body.home {
 
 .footer {
   @include container;
+  @include set-container-width(10);
   padding: 0px;
   .wrapper {
-    @include span-columns(8,8);
-    padding-left: 70px;
+    @include span-columns(8 ,8 );
+    width: 710px;
+    margin-left: 45px;
   }
   text-align: center;
   // background: #fff;
@@ -552,7 +555,6 @@ body.home {
     display: block;
     float: left;
     opacity: 0.7;
-    padding: 0;
     @include transition(opacity 0.3s ease-out);
     background-position: center center;
     background-repeat: no-repeat;
@@ -569,14 +571,12 @@ body.home {
       opacity: 1;
     }
     a {
-      img { 
-        color: blue;
-        height: auto;
-        width: auto;
-        max-height: 120px;
-      }
-     
+      position: relative;
     }
+      img { 
+        width: auto;
+        position: relative;
+      }
   }
 
 }
