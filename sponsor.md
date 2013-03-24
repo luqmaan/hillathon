@@ -4,21 +4,29 @@ title: Sponsor
 group: "navigation"
 order: 2
 teaser:
-    We need your support to make Hillsborough County the fastest growing tech community where new businesses want to come and our new graduates want to stay. By contributing to the Hillsborough County Hackathon, you are letting our local tech community know we want them here. 
+    Hillsborough County is seeking sponsorships from local businesses, who are interested in becoming champions for innovation, for the first Hillsborough Hack-A-Thon. Sponsorship will help cover the cost for advertisement, event space, prizes, food for the participants, and other event-related expenses.
 ---
 
-# Crowdfunding through Citizenvestor 
+<a href="http://www.hillsboroughcounty.org/DocumentCenter/View/6795">View sponsor request letter and sponsorship levels.</a>
 
-The County is excited to be using Citizinvestor - a Hillsborough County based company - to crowdfund the prizes for this exciting event! As with all projects on Citizinvestor, your credit card will not be charged until this project reaches 100% of its funding goal. So make your pledge today and encourage your friends on Facebook and Twitter to do the same!
+Organizations interested in becoming sponsors can:
 
-<a href="http://www.citizinvestor.com/project/prizes-for-hillsborough-app-a-thon" class="button">Fund On Citizenvestor</a>
+- Make a payment through <a href="https://www.paypal.com/home">PayPal</a> to <u>bccctampa2012@gmail.com</u>
+- Make a payment by check. Check should be make to and sent to:
 
+        Technology Communities Tampa Bay, Inc.
+        28808 Hanging Moss Loop, Wesley Chapel, 33543
+        ATTN: Hillsborough County Hack-A-Thon
 
-# Business Sponsorships
+- Donations of swag can be sent/delivered to
 
-Hillsborough County is seeking sponsorships from local businesses, who are interested in becoming champions for innovation, for the first Hillsborough Hack-A-Thon. Sponsorship will help cover the cost for advertisement, event space, prizes, food for the participants, and other event-related expenses.
- 
-There are several sponsorship levels that range from $250-$1,000. Sponsor benefits vary depending on the level, and include company logo on the Hillsborough Hack-A-Thon website, a 15 minute presentation-time during the event, logo on t-shirts, banner placement, and recognition as champions for innovation from Hillsborough County.
+        Kemly Green
+        Hillsborough County Communications and Digital Media Services Department
+        601 E. Kennedy Blvd., 16th Floor
+        Tampa, Fl 33602
+
+For additional information, contact <a href="mailto:greenkj@hillsboroughcounty.org">Kemly Jiménez Green</a>, Communications and Digital Media Services Department at 813-276-2677.
+00. Sponsor benefits vary depending on the level, and include company logo on the Hillsborough Hack-A-Thon website, a 15 minute presentation-time during the event, logo on t-shirts, banner placement, and recognition as champions for innovation from Hillsborough County.
 
 Organizations interested in becoming sponsors should contact <a href="mailto:greenkj@hillsboroughcounty.org">Kemly Jiménez Green</a>, Communications and Digital Media Services Department at 813-276-2677.
 
