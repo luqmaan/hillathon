@@ -1,1 +1,0 @@
-<li><a href="http://hackhillsborough.eventbrite.com/" target="_blank">Register</a></li>{% for order in (2..6) %}{% for p in site.pages %}{% if p.order == order %}<li><a {% if p.url == page.url %}class="active"{%endif %} href="{{p.url}}">{{p.title}}</a></li>{% endif %}{% endfor %}{% endfor %}
